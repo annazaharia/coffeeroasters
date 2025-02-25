@@ -1,0 +1,19 @@
+// Import Bootstrap functions (necessary before variables)
+@import "bootstrap/scss/functions";
+
+// Override Bootstrap variables (before importing original variables)
+@import "./variables";
+
+// Import Bootstrap variables and mixins
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// 4Import only the components you need (or the entire Bootstrap framework)
+@import "bootstrap/scss/bootstrap"; // Import the entire framework
+// OR
+// @import "bootstrap/scss/buttons";
+
+// Import your custom styles
+@import "./base.scss";
+@import "./components/collection";
+@import "./components/buttons";
