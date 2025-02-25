@@ -1,0 +1,324 @@
+h1 {
+  line-height: $h1-line-height;
+}
+
+h2 {
+  line-height: $h2-line-height;
+}
+
+h3 {
+  line-height: $h3-line-height;
+}
+
+h4 {
+  line-height: $h4-line-height;
+}
+
+footer {
+  background-color: $secondary;
+  margin-bottom: 88px;
+
+  .footer-link {
+    color: $link-color;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: $nav-link-font-size;
+
+    &:hover,
+    &:active,
+    &:focus {
+      color: #fefcf7;
+    }
+  }
+
+  .footer-icons {
+    color: $body-bg;
+    font-size: 20px;
+    margin-left: 15px;
+  }
+
+  .align-items-center {
+    padding: 45px 85px;
+  }
+}
+
+.text-ternary {
+  color: $ternary;
+}
+
+.container {
+  max-width: 1280px;
+}
+
+.navbar {
+  text-transform: uppercase;
+}
+
+.nav-link {
+  &.active {
+    color: $secondary;
+  }
+}
+
+.btn-primary {
+  --#{$prefix}btn-active-color: #{$btn-link-hover-color};
+}
+
+.hero {
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 117px 85px;
+
+  &-homepage {
+    background-image: url("./hero-homepage.jpg");
+  }
+
+  h1 {
+    margin-bottom: 34px;
+  }
+}
+
+.hero-text {
+  margin-bottom: 58px;
+
+  p {
+    width: 444px;
+    color: rgba($body-bg, 0.8);
+    margin-bottom: 0;
+  }
+}
+
+.products-section {
+  margin-top: 136px;
+  padding-left: 84px;
+  padding-right: 84px;
+
+  > .row:last-child {
+    margin-top: -70px;
+  }
+
+  h2 {
+    font-family: $font-fraunces;
+    font-size: 150px;
+    line-height: 1;
+    text-align: center;
+    letter-spacing: 10px;
+    padding: 24px 0 0;
+    margin-bottom: 0;
+
+    background-image: linear-gradient(0deg, #fefcf7 0%, #83888f 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.card-product {
+  background-color: transparent;
+  text-align: center;
+  border: none;
+
+  .card-body {
+    color: $body-color;
+    padding: 0;
+    margin-top: 72px;
+  }
+
+  .card-img-top {
+    width: 234px;
+    height: 178px;
+    object-fit: cover;
+  }
+
+  .card-text {
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+}
+
+.features-section {
+  margin-top: 200px;
+
+  > .row {
+    &:first-child {
+      background-color: $secondary-bg;
+      height: 576px;
+    }
+
+    &:last-child {
+      margin-top: -230px;
+      padding-left: 85px;
+      padding-right: 85px;
+    }
+  }
+}
+
+.features-headline {
+  padding-top: 100px;
+  text-align: center;
+
+  p {
+    margin-top: 2rem;
+    color: rgba($body-bg, 0.8);
+  }
+}
+
+.feature-card {
+  text-align: center;
+  background-color: $primary;
+
+  > img {
+    width: 72px;
+    height: 72px;
+    margin: 72px auto 0;
+  }
+
+  .card-title {
+    margin-bottom: 24px;
+  }
+
+  .card-body {
+    margin-top: 56px;
+    margin-bottom: 20px;
+    padding: 16px 44px;
+  }
+}
+
+.how-it-works-section {
+  margin-top: 200px;
+  margin-bottom: 200px;
+
+  h4 {
+    color: $link-color;
+  }
+
+  > .row {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
+}
+
+.steps-line {
+  position: relative;
+  margin-top: 80px;
+  margin-bottom: 67px;
+}
+
+.timeline {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  right: 0;
+  height: 2px;
+  background-color: $ternary;
+  z-index: 0;
+  width: 56%;
+}
+
+.steps-circle {
+  position: relative;
+  width: 31px;
+  height: 31px;
+  border: 2px solid $primary;
+  border-radius: 50%;
+  background-color: $body-bg;
+  z-index: 1;
+}
+
+.steps-numbers {
+  margin-bottom: 38px;
+}
+
+.steps-details {
+  margin-bottom: 64px;
+
+  h3 {
+    width: 255px;
+    margin-bottom: 42px;
+  }
+
+  p {
+    width: 285px;
+    margin-bottom: 0;
+  }
+}
+
+.about-us-homepage {
+  background-image: url("our-story.jpg");
+  height: 450px;
+  margin-top: 44px;
+
+  .text-our-story {
+    padding-top: 145px;
+    padding-left: 85px;
+
+    h2 {
+      font-family: $font-fraunces;
+      padding-bottom: 24px;
+    }
+
+    p {
+      color: $headings-color;
+    }
+  }
+}
+
+.our-commitment {
+  margin-top: 176px;
+  padding: 0 85px;
+}
+
+.commitment-description {
+  margin-top: 90px;
+  margin-bottom: 90px;
+  margin-left: 100px;
+
+  h2 {
+    color: $secondary;
+    margin-bottom: 32px;
+  }
+}
+
+.quality-standards {
+  margin-top: 254px;
+  padding: 0 85px;
+  background-color: $secondary-bg;
+
+  .quality-img {
+    margin-top: -86px;
+    margin-bottom: 86px;
+  }
+}
+
+.quality-description {
+  margin-top: 60px;
+  margin-right: 100px;
+
+  h2{
+    margin-bottom: 32px;
+  }
+
+  p {
+    color: $body-bg;
+  }
+}
+
+.headquarters {
+ margin-top: 179px;
+ margin-bottom: 168px;
+ padding-left: 77px;
+ padding-right: 158px;
+
+  h4 {
+    color: $link-color;
+    margin-bottom: 72px;
+  }
+
+  h3 {
+    color: $secondary-bg;
+  }
+}
+
+.headquarters-description {
+  margin-top: 46px;
+}

@@ -1,0 +1,24 @@
+.btn-primary {
+  color: $body-bg;
+
+  &:hover {
+    color: $body-bg;
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $body-bg;
+    background-color: $primary-disabled;
+    border-color: $primary-disabled;
+    opacity: initial;
+  }
+
+  &.active,
+  &.show {
+    color: $body-bg;
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+  }
+}
