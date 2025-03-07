@@ -58,3 +58,23 @@ $btn-padding-y: 16px;
 $btn-padding-x: 32px;
 $btn-font-family: $font-fraunces;
 $btn-link-hover-color: #fefcf7;
+
+// Accordion
+$accordion-button-bg: none;
+$accordion-button-active-bg: none;
+$accordion-border-width: 0;
+$accordion-button-color: #83888f;
+$accordion-button-active-color: #83888f;
+$accordion-padding-y: 0;
+$accordion-padding-x: 0;
+$accordion-icon-width: 18px;
+$accordion-icon-color: $primary;
+$accordion-icon-active-color: $primary;
+
+$accordion-button-active-icon: url('data:image/svg+xml,<svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Path 2" d="M15.9488 0.585785L18.7773 3.41421L9.6816 12.5099L0.585938 3.41421L3.41436 0.585785L9.68115 6.853L15.9488 0.585785Z" fill="#{$accordion-icon-active-color}"/></svg>');
+$accordion-button-icon: url('data:image/svg+xml,<svg width="19" height="13" viewBox="0 0 19 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Path 2" d="M15.9488 0.585785L18.7773 3.41421L9.6816 12.5099L0.585938 3.41421L3.41436 0.585785L9.68115 6.853L15.9488 0.585785Z" fill="#{$accordion-icon-active-color}"/></svg>');
+
+// Modal
+$modal-md: 540px;
+$modal-inner-padding: 56px;
+$modal-content-color: #333D4B;

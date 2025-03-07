@@ -1,25 +1,22 @@
-export default function Hero() {
+import HeroProps from "../interfaces/HeroProps";
+
+export default function Hero(props: HeroProps) {
   return (
-    <section className="container rounded-3 hero hero-homepage">
-      <div className="row hero-text">
-        <div className="col-12">
-          <h1>
-            Great coffee <br />
-            made simple.
-          </h1>
-          <p>
-            Start your mornings with the world's best coffees. Try our expertly
-            curated artisan coffees from our best roasters delivered directly to
-            your door, at your schedule.
-          </p>
-        </div>
-      </div>
-      <div className="row>">
-        <div className="col-12">
-          <button className="btn btn-primary" type="button">
-            Create your plan
-          </button>
-        </div>
+    <section
+      className="container rounded-3 hero"
+      style={{ backgroundImage: `url(./${props.cover})` }}
+    >
+      <div className="hero-story">
+        {props.titleTag === "h1" ? (
+          <h1>{props.title}</h1>
+        ) : (
+          <h2>{props.title}</h2>
+        )}
+        {/* Display HTML Tags with dangerouslySetInnerHTML attribute */}
+        <p
+          className="col-md-8"
+          dangerouslySetInnerHTML={{ __html: props.subtitle }}
+        ></p>
       </div>
     </section>
   );

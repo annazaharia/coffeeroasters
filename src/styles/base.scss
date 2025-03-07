@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 h1 {
   line-height: $h1-line-height;
 }
@@ -46,6 +50,10 @@ footer {
   color: $ternary;
 }
 
+.bg-secondary {
+  background-color: $secondary-bg;
+}
+
 .container {
   max-width: 1280px;
 }
@@ -62,16 +70,59 @@ footer {
 
 .btn-primary {
   --#{$prefix}btn-active-color: #{$btn-link-hover-color};
+  color: $body-bg;
+
+  &:hover {
+    color: $body-bg;
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+  }
+
+  &:disabled,
+  &.disabled {
+    color: $body-bg;
+    background-color: $primary-disabled;
+    border-color: $primary-disabled;
+    opacity: initial;
+  }
+
+  &.active,
+  &.show {
+    color: $body-bg;
+    background-color: $primary-hover;
+    border-color: $primary-hover;
+  }
 }
 
-.hero {
+.modal-header {
+  background-color: $secondary;
+  padding: 48px 56px 40px;
+}
+
+.modal-content {
+  p {
+    &:first-child {
+      font-size: 24px;
+      font-family: $font-fraunces;
+      line-height: 40px;
+      color: #83888f;
+    }
+  }
+
+  h3 {
+    color: $secondary;
+  }
+}
+
+.big-title {
+  font-family: $font-fraunces;
+}
+
+.hero-with-button {
   background-size: cover;
   background-repeat: no-repeat;
   padding: 117px 85px;
-
-  &-homepage {
-    background-image: url("./hero-homepage.jpg");
-  }
+  background-image: url("./hero-homepage.jpg");
 
   h1 {
     margin-bottom: 34px;
@@ -188,6 +239,20 @@ footer {
   margin-top: 200px;
   margin-bottom: 200px;
 
+  &.create-plan {
+    background-color: $secondary-bg;
+    margin-top: 155px;
+    padding-top: 20px;
+    padding-bottom: 36px;
+
+    h3 {
+      color: $body-bg;
+    }
+    p {
+      color: $body-bg;
+    }
+  }
+
   h4 {
     color: $link-color;
   }
@@ -243,22 +308,21 @@ footer {
   }
 }
 
-.about-us-homepage {
-  background-image: url("our-story.jpg");
+.hero {
   height: 450px;
   margin-top: 44px;
 
-  .text-our-story {
+  .hero-story {
     padding-top: 145px;
     padding-left: 85px;
 
+    h1,
     h2 {
-      font-family: $font-fraunces;
-      padding-bottom: 24px;
+      margin-bottom: 32px;
     }
 
     p {
-      color: $headings-color;
+      color: rgba($headings-color, 0.8);
     }
   }
 }
@@ -294,7 +358,7 @@ footer {
   margin-top: 60px;
   margin-right: 100px;
 
-  h2{
+  h2 {
     margin-bottom: 32px;
   }
 
@@ -304,10 +368,10 @@ footer {
 }
 
 .headquarters {
- margin-top: 179px;
- margin-bottom: 168px;
- padding-left: 77px;
- padding-right: 158px;
+  margin-top: 179px;
+  margin-bottom: 168px;
+  padding-left: 77px;
+  padding-right: 158px;
 
   h4 {
     color: $link-color;

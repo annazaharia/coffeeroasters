@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="container footer">
       <div className="row align-items-center">
@@ -38,7 +38,7 @@ export function Footer() {
             <i className="fa fa-twitter"></i>
           </NavLink>
           <NavLink to="" className="footer-icons">
-            <i className="	fa fa-instagram"></i>
+            <i className="fa fa-instagram"></i>
           </NavLink>
         </div>
       </div>

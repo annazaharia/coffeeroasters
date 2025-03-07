@@ -1,0 +1,120 @@
+.coffee-plan {
+  margin-top: 168px;
+  margin-bottom: 168px;
+
+  > .row {
+    padding-left: 85px;
+    padding-right: 85px;
+  }
+
+  .nav {
+    &-link {
+      padding: 0;
+      font-size: 24px;
+      color: rgba($secondary, 0.4);
+      font-family: $font-fraunces;
+      font-weight: 900;
+
+      &.active {
+        color: $secondary;
+
+        span {
+          color: $primary;
+        }
+      }
+
+      &.disabled {
+        opacity: 0.5;
+      }
+
+      span {
+        margin-right: 28px;
+      }
+    }
+
+    li {
+      padding-top: 21px;
+      padding-bottom: 21px;
+      border-bottom: 1px solid #83888f;
+
+      &:last-child {
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.accordion {
+  &-button {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+
+    &.disabled {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &-body {
+    margin-top: 56px;
+  }
+
+  &-item {
+    margin-bottom: 88px;
+
+    &.disabled {
+      opacity: 0.5;
+    }
+  }
+
+  &-collapse {
+    transition: height 1s ease;
+
+    &.show {
+      height: auto;
+    }
+  }
+}
+
+.option-card {
+  background-color: #f4f1eb;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  padding: 32px 28px;
+  min-height: 250px;
+
+  &:hover {
+    background-color: $ternary;
+  }
+
+  &.selected {
+    background-color: $primary;
+    color: $white;
+
+    h3 {
+      color: $white;
+    }
+  }
+
+  h3 {
+    color: $secondary;
+    margin-bottom: 24px;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.order-summary {
+  background-color: $secondary-bg;
+  color: $white;
+  padding: 27px 64px;
+
+  p:first-child {
+   text-transform: uppercase;
+   color: rgba($white, 0.5);
+  }
+}

@@ -1,9 +1,17 @@
-export default function OrderSteps() {
+import { Link } from "react-router-dom";
+import OrderStepsProps from "../interfaces/OrderStepsProps";
+
+export default function OrderSteps({
+  extraDetails,
+  extraClass,
+}: OrderStepsProps) {
   return (
-    <section className="container how-it-works-section">
-      <div className="row">
-        <h2 className="h4">How it works</h2>
-      </div>
+    <section className={`container how-it-works-section ${extraClass ?? ""}`}>
+      {extraDetails && (
+        <div className="row">
+          <h2 className="h4">How it works</h2>
+        </div>
+      )}
 
       <div className="row steps-line">
         <div className="timeline"></div>
@@ -33,7 +41,9 @@ export default function OrderSteps() {
 
       <div className="row steps-details">
         <div className="col-4">
-          <h3 className="text-secondary">Pick your coffee</h3>
+          <h3 className={`${extraDetails && "text-secondary"}`}>
+            Pick your coffee
+          </h3>
           <p>
             Select from our evolving range of artisan coffees. Our beans are
             ethically sourced and we pay fair prices for them. There are new
@@ -42,7 +52,9 @@ export default function OrderSteps() {
         </div>
 
         <div className="col-4">
-          <h3 className="text-secondary">Choose the frequency</h3>
+          <h3 className={`${extraDetails && "text-secondary"}`}>
+            Choose the frequency
+          </h3>
           <p>
             Customize your order frequency, quantity, even your roast style and
             grind type. Pause, skip or cancel your subscription with no
@@ -51,7 +63,9 @@ export default function OrderSteps() {
         </div>
 
         <div className="col-4">
-          <h3 className="text-secondary">Receive and enjoy!</h3>
+          <h3 className={`${extraDetails && "text-secondary"}`}>
+            Receive and enjoy!
+          </h3>
           <p>
             We ship your package within 48 hours, freshly roasted. Sit back and
             enjoy award-winning world-class coffees curated to provide a
@@ -60,11 +74,15 @@ export default function OrderSteps() {
         </div>
       </div>
 
-      <div className="row">
-        <div className="col-12">
-          <button className="btn btn-primary">Create your plan</button>
+      {extraDetails && (
+        <div className="row">
+          <div className="col-12">
+            <Link to="/create-plan" className="btn btn-primary">
+              Create your plan
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
     </section>
   );
 }
