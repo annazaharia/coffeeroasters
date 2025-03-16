@@ -2,12 +2,33 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  @include media-breakpoint-only(md) {
+    font-size: 15px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-left: 24px;
+    margin-right: 24px;
+  }
+}
+
 h1 {
   line-height: $h1-line-height;
+
+  @include media-breakpoint-only(md) {
+    font-size: 48px;
+    line-height: 48px;
+  }
 }
 
 h2 {
   line-height: $h2-line-height;
+
+  @include media-breakpoint-down(sm) {
+    font-size: 40px;
+    line-height: 40px;
+  }
 }
 
 h3 {
@@ -21,6 +42,24 @@ h4 {
 footer {
   background-color: $secondary;
   margin-bottom: 88px;
+
+  @include media-breakpoint-only(md) {
+    margin: 144px 40px 72px;
+
+    img {
+      margin-bottom: 32px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 72px;
+
+    .footer-logo {
+      text-align: center;
+      margin-top: 54px;
+      margin-bottom: 48px;
+    }
+  }
 
   .footer-link {
     color: $link-color;
@@ -43,6 +82,40 @@ footer {
 
   .align-items-center {
     padding: 45px 85px;
+
+    @include media-breakpoint-only(md) {
+      padding: 55px 200px;
+    }
+
+    @include media-breakpoint-down(sm) {
+      padding: 54px 0;
+    }
+  }
+
+  .social-icons {
+    margin-top: 65px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    .footer-nav {
+      .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .footer-link {
+        font-size: 15px;
+      }
+    }
+
+    .social-icons {
+      margin-top: 48px;
+      .fa {
+        width: 24px;
+        height: 24px;
+      }
+    }
   }
 }
 
@@ -52,10 +125,6 @@ footer {
 
 .bg-secondary {
   background-color: $secondary-bg;
-}
-
-.container {
-  max-width: 1280px;
 }
 
 .navbar {
@@ -92,6 +161,10 @@ footer {
     background-color: $primary-hover;
     border-color: $primary-hover;
   }
+
+  @include media-breakpoint-only(md) {
+    --bs-btn-font-size: 18px;
+  }
 }
 
 .modal-header {
@@ -118,24 +191,103 @@ footer {
   font-family: $font-fraunces;
 }
 
+.hero,
 .hero-with-button {
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+
+    @include media-breakpoint-down(sm) {
+      width: 327px;
+      height: 500px;
+      object-fit: cover;
+    }
+  }
+}
+
+.hero {
+  margin-top: 44px;
+  padding: 145px 85px 113px;
+
+  .hero-story {
+    h1,
+    h2 {
+      margin-bottom: 32px;
+    }
+
+    p {
+      color: rgba($headings-color, 0.8);
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    margin-top: 12px;
+    padding: 118px 58px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 111px 24px 87px 24px;
+
+    .hero-story {
+      h2 {
+        text-align: center;
+        margin-bottom: 24px;
+      }
+
+      p {
+        text-align: center;
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.hero-with-button {
   padding: 117px 85px;
-  background-image: url("./hero-homepage.jpg");
+
+  @include media-breakpoint-down(sm) {
+    padding: 100px 24px;
+  }
 
   h1 {
     margin-bottom: 34px;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 40px;
+      line-height: 40px;
+      margin-bottom: 24px;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    padding: 104px 58px;
   }
 }
 
 .hero-text {
   margin-bottom: 58px;
 
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 38px;
+  }
+
   p {
     width: 444px;
     color: rgba($body-bg, 0.8);
     margin-bottom: 0;
+
+    @include media-breakpoint-down(sm) {
+      width: 279px;
+    }
   }
 }
 
@@ -143,6 +295,12 @@ footer {
   margin-top: 136px;
   padding-left: 84px;
   padding-right: 84px;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 120px;
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   > .row:last-child {
     margin-top: -70px;
@@ -161,6 +319,36 @@ footer {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    @include media-breakpoint-down(sm) {
+      font-size: 40px;
+      line-height: 72px;
+      letter-spacing: 2px;
+      padding-top: 0;
+    }
+  }
+
+  > .row:last-child {
+    margin-top: -45px;
+    padding-left: 24px;
+    padding-right: 50px;
+  }
+
+  @include media-breakpoint-only(md) {
+    margin-top: 144px;
+    padding-left: 0;
+    padding-right: 0;
+
+    h2 {
+      font-size: 96px;
+      letter-spacing: 8px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    > .row:last-child {
+      margin-top: -10px;
+    }
   }
 }
 
@@ -185,6 +373,38 @@ footer {
     margin-top: 24px;
     margin-bottom: 0;
   }
+
+  @include media-breakpoint-only(md) {
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+
+    .card-body {
+      margin-top: 26px;
+
+      text-align: start;
+    }
+
+    .card-img-top {
+      width: 255px;
+      height: 178px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    .card-body {
+      margin-top: 24px;
+    }
+
+    .card-img-top {
+      width: 200px;
+      height: 151px;
+    }
+
+    & {
+      margin-bottom: 48px;
+    }
+  }
 }
 
 .features-section {
@@ -194,12 +414,41 @@ footer {
     &:first-child {
       background-color: $secondary-bg;
       height: 576px;
+
+      @include media-breakpoint-down(sm) {
+        height: 902px;
+      }
     }
 
     &:last-child {
       margin-top: -230px;
       padding-left: 85px;
       padding-right: 85px;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    margin-top: 144px;
+
+    > .row {
+      &:last-child {
+        margin-top: -300px;
+        padding-left: 58px;
+        padding-right: 58px;
+      }
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 74px;
+
+    > .row {
+      &:last-child {
+        margin-top: -550px;
+        padding-left: 24px;
+        padding-right: 24px;
+        gap: 24px;
+      }
     }
   }
 }
@@ -212,13 +461,33 @@ footer {
     margin-top: 2rem;
     color: rgba($body-bg, 0.8);
   }
+
+  @include media-breakpoint-only(md) {
+    padding: 56px 74px 70px;
+  }
+  @include media-breakpoint-down(sm) {
+    padding: 64px 12px;
+
+    h2 {
+      font-size: 28px;
+      line-height: 28px;
+    }
+
+    p {
+      margin-top: 24px;
+      padding: 0 24px;
+      margin-bottom: 0;
+      font-size: 15px;
+      line-height: 24px;
+    }
+  }
 }
 
 .feature-card {
   text-align: center;
   background-color: $primary;
 
-  > img {
+  img {
     width: 72px;
     height: 72px;
     margin: 72px auto 0;
@@ -233,11 +502,45 @@ footer {
     margin-bottom: 20px;
     padding: 16px 44px;
   }
+
+  @include media-breakpoint-only(md) {
+    margin-bottom: 24px;
+
+    img {
+      margin-top: 62px;
+      margin-left: 30px;
+    }
+
+    .card-body {
+      padding: 41px 48px 41px 0;
+      margin-top: 0;
+      margin-bottom: 0;
+      text-align: left;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    img {
+      margin-top: 30px;
+    }
+    .card-body {
+      padding: 56px 12px 51px;
+      margin: 0;
+    }
+  }
 }
 
 .how-it-works-section {
   margin-top: 200px;
   margin-bottom: 200px;
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 120px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 40px;
+  }
 
   &.create-plan {
     background-color: $secondary-bg;
@@ -253,13 +556,45 @@ footer {
     }
   }
 
-  h4 {
+  h2 {
     color: $link-color;
   }
 
   > .row {
     padding-left: 85px;
     padding-right: 85px;
+
+    @include media-breakpoint-down(sm) {
+      padding: 0;
+      font-size: 24px;
+      line-height: 32px;
+      margin-bottom: 24px;
+      text-align: center;
+
+      > div {
+        margin-bottom: 56px;
+      }
+    }
+
+    @include media-breakpoint-only(md) {
+      padding-left: 0;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    > div.d-none {
+      padding-left: 85px;
+      padding-right: 85px;
+    }
+
+    h2 {
+      font-size: $h4-font-size;
+    }
+  }
+
+  @include media-breakpoint-only(md) {
+    margin-top: 120px;
+    margin-bottom: 40px;
   }
 }
 
@@ -272,12 +607,16 @@ footer {
 .timeline {
   position: absolute;
   top: 50%;
-  left: 10%;
+  left: 2%;
   right: 0;
   height: 2px;
   background-color: $ternary;
   z-index: 0;
-  width: 56%;
+  width: 68%;
+
+  @include media-breakpoint-only(md) {
+    left: 4%;
+  }
 }
 
 .steps-circle {
@@ -290,39 +629,45 @@ footer {
   z-index: 1;
 }
 
-.steps-numbers {
-  margin-bottom: 38px;
-}
-
 .steps-details {
   margin-bottom: 64px;
+
+  h1 {
+    margin-bottom: 38px;
+  }
 
   h3 {
     width: 255px;
     margin-bottom: 42px;
+
+    @include media-breakpoint-only(md) {
+      width: 180px;
+    }
   }
 
   p {
     width: 285px;
     margin-bottom: 0;
+
+    @include media-breakpoint-only(md) {
+      width: 180px;
+    }
   }
-}
 
-.hero {
-  height: 450px;
-  margin-top: 44px;
+  @include media-breakpoint-only(md) {
+    margin-bottom: 44px;
+  }
 
-  .hero-story {
-    padding-top: 145px;
-    padding-left: 85px;
-
-    h1,
-    h2 {
-      margin-bottom: 32px;
+  @include media-breakpoint-down(sm) {
+    h1 {
+      font-size: 72px;
+      line-height: 72px;
     }
 
-    p {
-      color: rgba($headings-color, 0.8);
+    h3 {
+      font-size: 28px;
+      line-height: 32px;
+      width: 327px;
     }
   }
 }
@@ -330,6 +675,28 @@ footer {
 .our-commitment {
   margin-top: 176px;
   padding: 0 85px;
+
+  @include media-breakpoint-only(md) {
+    margin-top: 144px;
+    padding: 0;
+
+    .row img {
+      width: 281px;
+      height: 470px;
+      object-fit: cover;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 120px;
+    padding: 0;
+
+    .row img {
+      width: 327px;
+      height: 400px;
+      object-fit: cover;
+    }
+  }
 }
 
 .commitment-description {
@@ -341,6 +708,27 @@ footer {
     color: $secondary;
     margin-bottom: 32px;
   }
+
+  @include media-breakpoint-only(md) {
+    padding-left: 60px;
+    margin-top: 5px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin: 48px 0;
+    h2 {
+      font-size: 32px;
+      line-height: 48px;
+      margin-bottom: 30px;
+    }
+
+    p {
+      margin-bottom: 0;
+      line-height: 25px;
+    }
+  }
 }
 
 .quality-standards {
@@ -351,6 +739,12 @@ footer {
   .quality-img {
     margin-top: -86px;
     margin-bottom: 86px;
+
+    @include media-breakpoint-only(md) {
+      width: 573px;
+      height: 320px;
+      object-fit: cover;
+    }
   }
 }
 
@@ -380,6 +774,22 @@ footer {
 
   h3 {
     color: $secondary-bg;
+  }
+
+  @include media-breakpoint-only(md) {
+    padding: 0;
+    margin-top: 144px;
+    margin-bottom: 144px;
+
+    h3 {
+      font-size: 24px;
+    }
+
+    img {
+      width: 41px;
+      height: 49px;
+      object-fit: cover;
+    }
   }
 }
 

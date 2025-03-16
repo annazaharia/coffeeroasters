@@ -1,3 +1,11 @@
+$container-max-widths: (
+  sm: 540px,
+  md: 690px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1280px,
+);
+
 // Colors
 $primary: #0e8784;
 $secondary: #333d4b;
@@ -77,4 +85,4 @@ $accordion-button-icon: url('data:image/svg+xml,<svg width="19" height="13" view
 // Modal
 $modal-md: 540px;
 $modal-inner-padding: 56px;
-$modal-content-color: #333D4B;
+$modal-content-color: #333d4b;

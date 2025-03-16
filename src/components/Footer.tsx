@@ -4,14 +4,10 @@ export default function Footer() {
   return (
     <footer className="container footer">
       <div className="row align-items-center">
-        <div className="col-md-3">
-          <img
-            src="./logo-footer.png"
-            alt="Coffee Roasters"
-            style={{ height: "26px" }}
-          />
+        <div className="col-lg-3 col-sm-12 footer-logo">
+          <img src="./logo-footer.png" alt="Coffee Roasters" style={{ height: "26px" }} />
         </div>
-        <div className="col-md-5">
+        <div className="col-lg-5 col-sm-12 footer-nav">
           <ul className="nav justify-content-center gap-3">
             <li className="nav-item">
               <NavLink to="/" className="footer-link">
@@ -30,7 +26,7 @@ export default function Footer() {
             </li>
           </ul>
         </div>
-        <div className="col-md-4 text-center text-md-end social-icons">
+        <div className="col-lg-4 col-sm-12 text-center text-lg-end text-md-center social-icons">
           <NavLink to="" className="footer-icons">
             <i className="fa fa-facebook-official"></i>
           </NavLink>

@@ -2,7 +2,7 @@ export default function QualityStandards() {
   return (
     <section className="container rounded-3 quality-standards">
       <div className="row">
-        <div className="col-7">
+        <div className="col-lg-7 col-md-12">
           <div className="quality-description">
             <h2>Uncompromising quality</h2>
             <p>
@@ -15,7 +15,7 @@ export default function QualityStandards() {
             </p>
           </div>
         </div>
-        <div className="col-5">
+        <div className="col-lg-5 col-md-12">
           <img src="quality.png" className="quality-img rounded-3" />
         </div>
       </div>

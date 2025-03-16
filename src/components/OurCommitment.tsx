@@ -2,10 +2,10 @@ export default function OurCommitment() {
   return (
     <section className="container our-commitment">
       <div className="row">
-        <div className="col-5">
+        <div className="col-lg-5 col-md-5 col-sm-12">
           <img src="commitment-section.jpg" />
         </div>
-        <div className="col-7">
+        <div className="col-lg-7 col-md-7 col-sm-12">
           <div className="commitment-description">
             <h2>Our commitment</h2>
             <p>

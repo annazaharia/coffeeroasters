@@ -5,7 +5,7 @@ export default function Headquarters() {
         <h4>Our headquarters</h4>
       </div>
       <div className="row">
-        <div className="col-4">
+        <div className="col-lg-4 col-md-4">
           <img src="./united-kingdom.svg" />
           <div className="headquarters-description">
             <h3>United Kingdom</h3>
@@ -17,7 +17,7 @@ export default function Headquarters() {
             </p>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-lg-4 col-md-4">
           <img src="./canada.svg" />
           <div className="headquarters-description">
             <h3>Canada</h3>
@@ -29,7 +29,7 @@ export default function Headquarters() {
             </p>
           </div>
         </div>
-        <div className="col-4">
+        <div className="col-lg-4 col-md-4">
           <img src="./Combined Shape.svg" />
           <div className="headquarters-description">
             <h3>Australia</h3>

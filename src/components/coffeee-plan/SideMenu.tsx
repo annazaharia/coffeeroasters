@@ -5,7 +5,7 @@ export default function SideMenu() {
   const { openSections, isGrindOptionDisabled, onMenuClick } = usePlanContext();
 
   return (
-    <ol className="nav flex-column sticky-top">
+    <ol className="nav flex-column sticky-top d-none d-lg-block">
       {Sections.map((section, index) => (
         <li key={section.id}>
           <a

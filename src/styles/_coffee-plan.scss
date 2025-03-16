@@ -2,9 +2,18 @@
   margin-top: 168px;
   margin-bottom: 168px;
 
+  @include media-breakpoint-only(md) {
+    margin-top: 144px;
+  }
+
+
   > .row {
     padding-left: 85px;
     padding-right: 85px;
+
+    @include media-breakpoint-only(md) {
+      padding: 0;
+    }
   }
 
   .nav {
@@ -58,10 +67,20 @@
 
   &-body {
     margin-top: 56px;
+    
+    @include media-breakpoint-only(md) {
+      margin-top: 40px;
+    }
+
   }
 
   &-item {
     margin-bottom: 88px;
+
+    @include media-breakpoint-only(md) {
+      margin-bottom: 100px;
+    }
+
 
     &.disabled {
       opacity: 0.5;
@@ -117,4 +136,10 @@
    text-transform: uppercase;
    color: rgba($white, 0.5);
   }
+
+  @include media-breakpoint-only(md) {
+    padding: 27px 44px;
+    margin-top: 17px;
+  }
+
 }
