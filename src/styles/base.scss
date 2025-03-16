@@ -43,24 +43,6 @@ footer {
   background-color: $secondary;
   margin-bottom: 88px;
 
-  @include media-breakpoint-only(md) {
-    margin: 144px 40px 72px;
-
-    img {
-      margin-bottom: 32px;
-    }
-  }
-
-  @include media-breakpoint-down(sm) {
-    margin-bottom: 72px;
-
-    .footer-logo {
-      text-align: center;
-      margin-top: 54px;
-      margin-bottom: 48px;
-    }
-  }
-
   .footer-link {
     color: $link-color;
     text-transform: uppercase;
@@ -92,11 +74,27 @@ footer {
     }
   }
 
-  .social-icons {
-    margin-top: 65px;
+  @include media-breakpoint-only(md) {
+    margin: 144px 40px 72px;
+
+    img {
+      margin-bottom: 32px;
+    }
+
+    .social-icons {
+      margin-top: 65px;
+    }
   }
 
   @include media-breakpoint-down(sm) {
+    margin-bottom: 72px;
+
+    .footer-logo {
+      text-align: center;
+      margin-top: 54px;
+      margin-bottom: 48px;
+    }
+
     .footer-nav {
       .nav {
         display: flex;
@@ -739,11 +737,19 @@ footer {
   .quality-img {
     margin-top: -86px;
     margin-bottom: 86px;
+  }
 
-    @include media-breakpoint-only(md) {
+  @include media-breakpoint-only(md) {
+    margin-top: 348px;
+    padding-left: 58px;
+    padding-right: 58px;
+
+    .quality-img {
       width: 573px;
       height: 320px;
       object-fit: cover;
+      margin-top: -160px;
+      margin-bottom: 0;
     }
   }
 }
@@ -758,6 +764,16 @@ footer {
 
   p {
     color: $body-bg;
+  }
+
+  @include media-breakpoint-only(md) {
+    margin-top: 64px;
+    margin-right: 0;
+    text-align: center;
+
+    p {
+      margin-bottom: 50px;
+    }
   }
 }
 
