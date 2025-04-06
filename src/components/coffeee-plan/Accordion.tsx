@@ -18,7 +18,7 @@ export default function Accordion() {
           onToggle={() => onToggleSection(section.id)}
         >
           {section.options.map((option) => (
-            <div key={option.id} className="col-4">
+            <div key={option.id} className="col-md-4 col-sm-12">
               <div
                 className={`option-card ${
                   preferences[section.id as keyof Preferences] === option.id ? "selected" : ""

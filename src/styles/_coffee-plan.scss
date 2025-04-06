@@ -6,12 +6,19 @@
     margin-top: 144px;
   }
 
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 80px;
+  }
 
   > .row {
     padding-left: 85px;
     padding-right: 85px;
 
     @include media-breakpoint-only(md) {
+      padding: 0;
+    }
+
+    @include media-breakpoint-down(sm) {
       padding: 0;
     }
   }
@@ -67,11 +74,10 @@
 
   &-body {
     margin-top: 56px;
-    
+
     @include media-breakpoint-only(md) {
       margin-top: 40px;
     }
-
   }
 
   &-item {
@@ -80,7 +86,6 @@
     @include media-breakpoint-only(md) {
       margin-bottom: 100px;
     }
-
 
     &.disabled {
       opacity: 0.5;
@@ -92,6 +97,18 @@
 
     &.show {
       height: auto;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    &-button {
+      font-size: 24px;
+      line-height: 28px;
+      padding-left: 15px;
+    }
+
+    &-body {
+      margin-top: 32px;
     }
   }
 }
@@ -125,6 +142,12 @@
   p {
     margin: 0;
   }
+
+  @include media-breakpoint-down(sm) {
+    margin-bottom: 16px;
+    min-height: 0;
+    padding: 24px 25px;
+  }
 }
 
 .order-summary {
@@ -133,8 +156,8 @@
   padding: 27px 64px;
 
   p:first-child {
-   text-transform: uppercase;
-   color: rgba($white, 0.5);
+    text-transform: uppercase;
+    color: rgba($white, 0.5);
   }
 
   @include media-breakpoint-only(md) {
@@ -142,4 +165,8 @@
     margin-top: 17px;
   }
 
+  @include media-breakpoint-down(sm) {
+    padding: 32px 24px;
+    margin-bottom: 56px;
+  }
 }

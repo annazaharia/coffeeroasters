@@ -35,7 +35,7 @@ export default function OrderSummaryModal({ isOpen, onClose }: OrderSummaryModal
 
     setTimeout(() => {
       resetPreferences();
-      navigate("/");
+      navigate("/checkout");
     }, 1000);
   };
 

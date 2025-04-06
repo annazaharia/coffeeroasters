@@ -594,6 +594,12 @@ footer {
     margin-top: 120px;
     margin-bottom: 40px;
   }
+
+  @include media-breakpoint-down(sm) {
+    &.create-plan {
+      margin-top: 120px;
+    }
+  }
 }
 
 .steps-line {
@@ -752,6 +758,18 @@ footer {
       margin-bottom: 0;
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 134px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    .quality-img {
+      width: 279px;
+      height: 156px;
+      object-fit: cover;
+    }
+  }
 }
 
 .quality-description {
@@ -773,6 +791,17 @@ footer {
 
     p {
       margin-bottom: 50px;
+    }
+  }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: 61px;
+    h2 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 24px;
     }
   }
 }
@@ -807,8 +836,63 @@ footer {
       object-fit: cover;
     }
   }
+
+  @include media-breakpoint-down(sm) {
+    margin-top: 120px;
+    margin-bottom: 76px;
+    padding: 0;
+    text-align: center;
+
+    h4 {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    .head-quarter {
+      margin-bottom: 64px;
+    }
+  }
 }
 
 .headquarters-description {
   margin-top: 46px;
 }
+
+.checkout-section {
+  margin-top: 100px;
+  margin-bottom: 120px;
+}
+.checkout-details,
+.authentication {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.checkout-details {
+  h3 {
+    background-color: $primary;
+    text-align: center;
+    padding: 10px 0;
+  }
+}
+
+.table-checkout {
+  margin: 50px 0;
+
+  tbody {
+    td{
+    text-align: center;
+  }
+  }
+
+
+}
+
+.authentication {
+  .nav-pills .nav-item > a {
+    font-size: 32px;
+    font-family: $font-fraunces ;
+  }
+}
+
+

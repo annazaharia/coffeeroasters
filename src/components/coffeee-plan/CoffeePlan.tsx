@@ -25,13 +25,13 @@ export default function CoffeePlan() {
   return (
     <section className="container coffee-plan">
       <div className="row">
-        <div className="col-lg-3">
+        <div className="col-lg-3 col-sm-12">
           <SideMenu />
         </div>
-        <div className="col-lg-8 offset-lg-1">
+        <div className="col-lg-8 offset-lg-1 col-sm-12">
           <Accordion />
           <OrderSummary />
-          <div className="text-lg-end text-md-center mt-lg-4 mt-md-5">
+          <div className="text-lg-end text-center mt-lg-4 mt-md-5">
             <button className="btn btn-primary" disabled={!isValidPlan()} onClick={() => setIsModalOpen(true)}>
               Create my plan!
             </button>

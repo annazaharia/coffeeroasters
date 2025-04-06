@@ -4,6 +4,8 @@ import AboutUs from "./pages/AboutUs";
 import "./styles/main.scss";
 import CreatePlan from "./pages/CreatePlan";
 import { PlanProvider } from "./contexts/PlanProvider";
+import Checkout from "./pages/checkout";
+
 
 export default function App() {
   return (
@@ -12,6 +14,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/create-plan" element={<CreatePlan />} />
+        <Route path="/checkout" element = {<Checkout/>}/>
       </Routes>
     </PlanProvider>
   );
