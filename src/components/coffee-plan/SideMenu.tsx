@@ -1,8 +1,8 @@
-import { usePlanContext } from "../../contexts/PlanContext";
+import { useCoffeePlanContext } from "../../contexts/CoffeePlanContext";
 import { Sections } from "../../data/Sections";
 
 export default function SideMenu() {
-  const { openSections, isGrindOptionDisabled, onMenuClick } = usePlanContext();
+  const { openSections, isGrindOptionDisabled, onMenuClick } = useCoffeePlanContext();
 
   return (
     <ol className="nav flex-column sticky-top d-none d-lg-block">

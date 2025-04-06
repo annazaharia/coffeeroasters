@@ -1,9 +1,9 @@
 import { Preferences } from "../../interfaces/Preferences";
 import { Sections } from "../../data/Sections";
-import { usePlanContext } from "../../contexts/PlanContext";
+import { useCoffeePlanContext } from "../../contexts/CoffeePlanContext";
 
 export default function SummaryText({ className }: { className?: string }) {
-  const { preferences } = usePlanContext();
+  const { preferences } = useCoffeePlanContext();
 
   const getSummaryText = (key: keyof Preferences) => {
     const placeholder = <span className="text-primary">_____</span>;

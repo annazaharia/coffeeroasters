@@ -2,25 +2,12 @@ import { useState } from "react";
 import Accordion from "./Accordion";
 import OrderSummary from "./OrderSummary";
 import SideMenu from "./SideMenu";
-import { Preferences } from "../../interfaces/Preferences";
 import OrderSummaryModal from "./OrderSummaryModal";
-import { usePlanContext } from "../../contexts/PlanContext";
+import { useCoffeePlanContext } from "../../contexts/CoffeePlanContext";
 
 export default function CoffeePlan() {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const { preferences } = usePlanContext();
-
-  const isValidPlan = () => {
-    const requiredPreferences = ["coffeeType", "beanType", "quantity", "deliveries"];
-
-    if (preferences.coffeeType && preferences.coffeeType !== "capsule") {
-      requiredPreferences.push("grindOption");
-    }
-
-    return requiredPreferences.every((preference) => {
-      return preferences[preference as keyof Preferences];
-    });
-  };
+  const { isValidPlan } = useCoffeePlanContext();
 
   return (
     <section className="container coffee-plan">

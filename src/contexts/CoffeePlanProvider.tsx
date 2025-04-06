@@ -1,9 +1,9 @@
-import { PlanContext } from "./PlanContext";
+import { CoffeePlanContext } from "./CoffeePlanContext";
 import { ReactNode, useState } from "react";
 import { Preferences } from "../interfaces/Preferences";
 import { Sections } from "../data/Sections";
 
-export const PlanProvider = ({ children }: { children: ReactNode }) => {
+export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
   const [preferences, setPreferences] = useState<Preferences>({
     coffeeType: "",
     beanType: "",
@@ -78,11 +78,65 @@ export const PlanProvider = ({ children }: { children: ReactNode }) => {
     setOpenSections(["coffeeType"]);
   };
 
+  const calculateBasePrice = () => {
+    const basePrice = 10;
+    const quantityMultiplier =
+      {
+        "250g": 1,
+        "500g": 2,
+        "1000g": 4,
+      }[preferences.quantity] || 1;
+
+    return basePrice * quantityMultiplier;
+  };
+
+  const calculateDeliveryPrice = () => {
+    const deliveries = Sections.find((section) => section.id === "deliveries");
+    const deliveryOption = deliveries?.options.find((option) => option.id === preferences.deliveries);
+
+    const deliveryMultiplier =
+      {
+        everyWeek: 4,
+        everyTwoWeeks: 2,
+        everyMonth: 1,
+      }[preferences.deliveries] || 1;
+
+    return (deliveryOption?.price ?? 0) * deliveryMultiplier;
+  };
+
+  const calculateTotalPrice = () => {
+    return (calculateBasePrice() + calculateDeliveryPrice()).toFixed(2);
+  };
+
+  const isValidPlan = () => {
+    const requiredPreferences = ["coffeeType", "beanType", "quantity", "deliveries"];
+
+    if (preferences.coffeeType && preferences.coffeeType !== "capsule") {
+      requiredPreferences.push("grindOption");
+    }
+
+    return requiredPreferences.every((preference) => {
+      return preferences[preference as keyof Preferences];
+    });
+  };
+
   return (
-    <PlanContext.Provider
-      value={{ preferences, openSections, isGrindOptionDisabled, onToggleSection, onOptionSelect, onMenuClick, resetPreferences }}
+    <CoffeePlanContext.Provider
+      value={{
+        preferences,
+        openSections,
+        isGrindOptionDisabled,
+        onToggleSection,
+        onOptionSelect,
+        onMenuClick,
+        resetPreferences,
+        calculateBasePrice,
+        calculateDeliveryPrice,
+        calculateTotalPrice,
+        isValidPlan,
+      }}
     >
       {children}
-    </PlanContext.Provider>
+    </CoffeePlanContext.Provider>
   );
 };

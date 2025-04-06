@@ -1,4 +1,4 @@
-import CoffeePlan from "../components/coffeee-plan/CoffeePlan";
+import CoffeePlan from "../components/coffee-plan/CoffeePlan";
 import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";

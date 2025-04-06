@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="container footer">
       <div className="row align-items-center">
         <div className="col-lg-3 col-sm-12 footer-logo">
-          <img src="./logo-footer.png" alt="Coffee Roasters" style={{ height: "26px" }} />
+          <img src="/logo-footer.png" alt="Coffee Roasters" style={{ height: "26px" }} />
         </div>
         <div className="col-lg-5 col-sm-12 footer-nav">
           <ul className="nav justify-content-center gap-3">

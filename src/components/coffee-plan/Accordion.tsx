@@ -1,11 +1,11 @@
-import { usePlanContext } from "../../contexts/PlanContext";
+import { useCoffeePlanContext } from "../../contexts/CoffeePlanContext";
 import { Sections } from "../../data/Sections";
 import { Preferences } from "../../interfaces/Preferences";
 import { Section } from "../../interfaces/Section";
 import AccordionItem from "./AccordionItem";
 
 export default function Accordion() {
-  const { preferences, openSections, isGrindOptionDisabled, onToggleSection, onOptionSelect } = usePlanContext();
+  const { preferences, openSections, isGrindOptionDisabled, onToggleSection, onOptionSelect } = useCoffeePlanContext();
 
   return (
     <div className="accordion" id="coffeePlanAccordion">

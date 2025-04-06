@@ -880,19 +880,38 @@ footer {
   margin: 50px 0;
 
   tbody {
-    td{
-    text-align: center;
+    td {
+      text-align: center;
+    }
   }
-  }
-
-
 }
 
 .authentication {
   .nav-pills .nav-item > a {
     font-size: 32px;
-    font-family: $font-fraunces ;
+    font-family: $font-fraunces;
+    border-radius: 0;
+    line-height: 32px;
+    padding: 10px 0;
   }
 }
 
+.message-auth {
+  text-align: center;
+  line-height: 60px;
+  margin-top: 60px;
+}
 
+.img-confirm {
+  margin: 0 auto 100px;
+  display: block;
+}
+
+.message-confirm {
+  color: $primary;
+  font-size: 25px;
+  text-align: center;
+  line-height: 40px;
+  margin-top: 70px;
+  margin-bottom: 70px;
+}

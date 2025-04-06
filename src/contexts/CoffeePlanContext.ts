@@ -1,7 +1,7 @@
 import { createContext, useContext } from "react";
 import { Preferences } from "../interfaces/Preferences";
 
-export const PlanContext = createContext<{
+interface CoffeePlanContextType {
   preferences: Preferences;
   openSections: string[];
   isGrindOptionDisabled: boolean;
@@ -9,7 +9,13 @@ export const PlanContext = createContext<{
   onOptionSelect: (sectionId: string, optionId: string) => void;
   onMenuClick: (sectionId: string) => void;
   resetPreferences: () => void;
-}>({
+  calculateBasePrice: () => void;
+  calculateDeliveryPrice: () => void;
+  calculateTotalPrice: () => string;
+  isValidPlan: () => boolean;
+}
+
+export const CoffeePlanContext = createContext<CoffeePlanContextType>({
   preferences: {
     coffeeType: "",
     beanType: "",
@@ -23,6 +29,10 @@ export const PlanContext = createContext<{
   onOptionSelect: () => {},
   onMenuClick: () => {},
   resetPreferences: () => {},
+  calculateBasePrice: () => "",
+  calculateDeliveryPrice: () => "",
+  calculateTotalPrice: () => "",
+  isValidPlan: () => false,
 });
 
-export const usePlanContext = () => useContext(PlanContext);
+export const useCoffeePlanContext = () => useContext(CoffeePlanContext);
