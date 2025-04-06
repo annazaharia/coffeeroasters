@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 export default function Navbar() {
   const [isCollapsed, setIsCollapsed] = useState(true);
@@ -12,9 +12,9 @@ export default function Navbar() {
     <header>
       <nav className="navbar navbar-expand-md">
         <div className="container p-0">
-          <a className="navbar-brand" href="index.html">
-            <img src="./logo.png" alt="Logo" />
-          </a>
+          <Link to="/" className="navbar-brand">
+            <img src="/logo.png" alt="Logo" />
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

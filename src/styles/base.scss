@@ -880,19 +880,18 @@ footer {
   margin: 50px 0;
 
   tbody {
-    td{
-    text-align: center;
+    td {
+      text-align: center;
+    }
   }
-  }
-
-
 }
 
 .authentication {
   .nav-pills .nav-item > a {
     font-size: 32px;
-    font-family: $font-fraunces ;
+    font-family: $font-fraunces;
+    border-radius: 0;
+    line-height: 32px;
+    padding: 10px 0;
   }
 }
-
-

@@ -1,40 +1,16 @@
 import { useNavigate } from "react-router-dom";
-import { Sections } from "../../data/Sections";
 import { OrderSummaryModalProps } from "../../interfaces/OrderSummaryModalProps";
 import SummaryText from "./SummaryText";
 import { usePlanContext } from "../../contexts/PlanContext";
 
 export default function OrderSummaryModal({ isOpen, onClose }: OrderSummaryModalProps) {
-  const { preferences, resetPreferences } = usePlanContext();
+  const { calculateTotalPrice } = usePlanContext();
   const navigate = useNavigate();
-
-  const calculateTotalPrice = () => {
-    const basePrice = 10;
-    const deliveries = Sections.find((section) => section.id === "deliveries");
-    const deliveryOption = deliveries?.options.find((option) => option.id === preferences.deliveries);
-
-    const quantityMultiplier =
-      {
-        "250g": 1,
-        "500g": 2,
-        "1000g": 4,
-      }[preferences.quantity] || 1;
-
-    const deliveryMultiplier =
-      {
-        everyWeek: 4,
-        everyTwoWeeks: 2,
-        everyMonth: 1,
-      }[preferences.deliveries] || 1;
-
-    return (basePrice * quantityMultiplier + (deliveryOption?.price ?? 0) * deliveryMultiplier).toFixed(2);
-  };
 
   const handleCheckout = () => {
     onClose();
 
     setTimeout(() => {
-      resetPreferences();
       navigate("/checkout");
     }, 1000);
   };

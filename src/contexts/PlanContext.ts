@@ -9,6 +9,9 @@ export const PlanContext = createContext<{
   onOptionSelect: (sectionId: string, optionId: string) => void;
   onMenuClick: (sectionId: string) => void;
   resetPreferences: () => void;
+  calculateBasePrice: () => void;
+  calculateDeliveryPrice: () => void;
+  calculateTotalPrice: () => string;
 }>({
   preferences: {
     coffeeType: "",
@@ -23,6 +26,9 @@ export const PlanContext = createContext<{
   onOptionSelect: () => {},
   onMenuClick: () => {},
   resetPreferences: () => {},
+  calculateBasePrice: () => "",
+  calculateDeliveryPrice: () => "",
+  calculateTotalPrice: () => "",
 });
 
 export const usePlanContext = () => useContext(PlanContext);
