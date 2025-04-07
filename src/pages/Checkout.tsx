@@ -62,6 +62,7 @@ export default function Checkout() {
         </div>
       </section>
       <Footer />
+      <Footer />
     </>
   );
 }

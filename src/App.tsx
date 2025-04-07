@@ -16,6 +16,12 @@ export default function App() {
     window.scrollTo(0, 0);
   }, [location]);
 
+  const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <Routes>
       <Route path="/" element={<Home />} />
