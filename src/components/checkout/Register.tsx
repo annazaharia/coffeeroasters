@@ -54,7 +54,7 @@ export default function Register() {
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const onSubmit = async (data: RegisterFormData) => {
+  const onSubmit = (data: RegisterFormData) => {
     try {
       setIsLoading(true);
       setError(null);

@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import { Preferences } from "../interfaces/Preferences";
 
+// define the type of context
 interface CoffeePlanContextType {
   preferences: Preferences;
   openSections: string[];
@@ -15,6 +16,7 @@ interface CoffeePlanContextType {
   isValidPlan: () => boolean;
 }
 
+// create context with default values
 export const CoffeePlanContext = createContext<CoffeePlanContextType>({
   preferences: {
     coffeeType: "",
@@ -35,4 +37,5 @@ export const CoffeePlanContext = createContext<CoffeePlanContextType>({
   isValidPlan: () => false,
 });
 
+// create customized hook
 export const useCoffeePlanContext = () => useContext(CoffeePlanContext);

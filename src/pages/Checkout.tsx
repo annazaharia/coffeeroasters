@@ -9,8 +9,6 @@ export default function Checkout() {
   const isIndex = location.pathname === "/checkout";
   const { user, isAuthenticated, logout } = useAuthContext();
 
-  console.log(user?.email);
-
   return (
     <>
       <Navbar />
@@ -22,7 +20,9 @@ export default function Checkout() {
 
           {isAuthenticated && (
             <div className="col-lg-6 authentication">
-              <p className="h2 text-secondary mb-4 message-auth">Welcome, <br/> {user?.firstName + " " + user?.lastName}!</p>
+              <p className="h2 text-secondary mb-4 message-auth">
+                Welcome, <br /> {user?.firstName + " " + user?.lastName}!
+              </p>
               <div className="d-grid">
                 <button type="submit" className="btn btn-primary btn-block mb-4" onClick={() => logout()}>
                   Logout
@@ -61,7 +61,6 @@ export default function Checkout() {
           )}
         </div>
       </section>
-      <Footer />
       <Footer />
     </>
   );

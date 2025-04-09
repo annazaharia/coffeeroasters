@@ -18,6 +18,7 @@ export interface AuthContextType {
   logout: () => void;
 }
 
+// setting the context
 export const AuthContext = createContext<AuthContextType>({
   user: null,
   isAuthenticated: false,
@@ -26,4 +27,5 @@ export const AuthContext = createContext<AuthContextType>({
   logout: () => {},
 });
 
+// create custom hook
 export const useAuthContext = () => useContext(AuthContext);

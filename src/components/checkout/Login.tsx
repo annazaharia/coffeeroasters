@@ -4,6 +4,7 @@ import { z } from "zod";
 import { useAuthContext } from "../../contexts/AuthContext";
 import { useState } from "react";
 
+// Definition of the zod validation scheme
 const loginSchema = z.object({
   email: z.string().email("Please enter a valid email address"),
   password: z
@@ -30,7 +31,7 @@ export default function Login() {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const onSubmit = async (data: LoginFormData) => {
+  const onSubmit = (data: LoginFormData) => {
     try {
       setIsLoading(true);
       setError(null);

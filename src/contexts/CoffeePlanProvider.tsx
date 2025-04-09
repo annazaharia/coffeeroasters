@@ -3,6 +3,7 @@ import { ReactNode, useState } from "react";
 import { Preferences } from "../interfaces/Preferences";
 import { Sections } from "../data/Sections";
 
+// component providing context
 export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
   const [preferences, setPreferences] = useState<Preferences>({
     coffeeType: "",
@@ -11,16 +12,20 @@ export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
     grindOption: "",
     deliveries: "",
   });
+
   const [openSections, setOpenSections] = useState<string[]>(["coffeeType"]);
 
+  // capsule doesn't need grinding
   const isGrindOptionDisabled = preferences.coffeeType === "capsule";
 
+  // add or remove an open section
   const onToggleSection = (sectionId: string) => {
     setOpenSections((prev) =>
       prev.includes(sectionId) ? prev.filter((id) => id !== sectionId) : [...prev, sectionId]
     );
   };
 
+   // the user chooses an option, then preferences are updated.
   const onOptionSelect = (sectionId: string, optionId: string) => {
     if (sectionId === "grindOption" && isGrindOptionDisabled) {
       return;
@@ -57,6 +62,7 @@ export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
     setOpenSections((prev) => [...prev, nextSection.id]);
   };
 
+   // when the user clicks on an item in the sidebar, that section opens.
   const onMenuClick = (sectionId: string) => {
     if (sectionId === "grindOption" && isGrindOptionDisabled) {
       return;
@@ -67,6 +73,7 @@ export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+    // reset preferences
   const resetPreferences = () => {
     setPreferences({
       coffeeType: "",
@@ -78,6 +85,7 @@ export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
     setOpenSections(["coffeeType"]);
   };
 
+     // price calculation
   const calculateBasePrice = () => {
     const basePrice = 10;
     const quantityMultiplier =
@@ -108,6 +116,7 @@ export const CoffeePlanProvider = ({ children }: { children: ReactNode }) => {
     return (calculateBasePrice() + calculateDeliveryPrice()).toFixed(2);
   };
 
+   // coffee plan validation
   const isValidPlan = () => {
     const requiredPreferences = ["coffeeType", "beanType", "quantity", "deliveries"];
 

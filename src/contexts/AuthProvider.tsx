@@ -5,6 +5,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
+   // check if the user is logged
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
@@ -13,6 +14,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+   // check if the user is registered
   const login = (email: string, password: string): void => {
     try {
       const users = JSON.parse(localStorage.getItem("users") || "[]");
@@ -32,11 +34,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
+   // check if email already exists
   const register = (newUser: Omit<User, "id">): User => {
     try {
       const users = JSON.parse(localStorage.getItem("users") || "[]");
 
-      // Check if email already exists
       if (users.some((u: User) => u.email === newUser.email)) {
         throw new Error("Email already exists!");
       }
@@ -61,6 +63,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   };
 
+   // delete current user
   const logout = () => {
     setUser(null);
     setIsAuthenticated(false);
