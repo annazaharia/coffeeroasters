@@ -3,10 +3,12 @@ import Footer from "../components/Footer";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import OrderSteps from "../components/OrderSteps";
+import PageTitle from "../components/PageTitle";
 
 export default function CreatePlan() {
   return (
     <>
+      <PageTitle title="Create Plan" />
       <Navbar />
       <Hero
         title="Create plan"

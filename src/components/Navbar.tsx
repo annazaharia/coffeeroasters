@@ -6,6 +6,11 @@ export default function Navbar() {
 
   const toggleNavbar = () => {
     setIsCollapsed(!isCollapsed);
+    if (!isCollapsed) {
+      document.body.classList.remove("no-scroll");
+    } else {
+      document.body.classList.add("no-scroll");
+    }
   };
 
   return (
@@ -16,7 +21,7 @@ export default function Navbar() {
             <img src="/logo.png" alt="Logo" />
           </Link>
           <button
-            className="navbar-toggler"
+            className={`navbar-toggler ${!isCollapsed ? "active" : ""}`}
             type="button"
             onClick={toggleNavbar}
             aria-controls="navbarNav"
@@ -24,9 +29,30 @@ export default function Navbar() {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-close">×</span>
           </button>
 
-          <div className={`collapse navbar-collapse justify-content-end ${!isCollapsed ? "show" : ""}`} id="navbarNav">
+          <div className={`mobile-menu ${!isCollapsed ? "show" : ""}`}>
+            <ul className="navbar-nav">
+              <li className="nav-item">
+                <NavLink to="/" className="nav-link" onClick={toggleNavbar}>
+                  Home
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/about-us" className="nav-link" onClick={toggleNavbar}>
+                  About us
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink to="/create-plan" className="nav-link" onClick={toggleNavbar}>
+                  Create your plan
+                </NavLink>
+              </li>
+            </ul>
+          </div>
+
+          <div className={`collapse navbar-collapse justify-content-end`} id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">
                 <NavLink to="/" className="nav-link">

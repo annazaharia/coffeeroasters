@@ -4,10 +4,12 @@ import Hero from "../components/Hero";
 import QualityStandards from "../components/QualityStandards";
 import Headquarters from "../components/Headquarters";
 import Footer from "../components/Footer";
+import PageTitle from "../components/PageTitle";
 
 export default function AboutUs() {
   return (
     <>
+      <PageTitle title="About Us" />
       <Navbar />
       <Hero
         title="About us"
