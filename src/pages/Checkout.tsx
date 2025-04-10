@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 
 export default function Checkout() {
   const location = useLocation();
-  const isIndex = location.pathname === "/checkout";
+  const isLogin = location.pathname === "/checkout";
   const { user, isAuthenticated, logout } = useAuthContext();
 
   return (
@@ -36,7 +36,7 @@ export default function Checkout() {
               <ul className="nav nav-pills nav-justified mb-3" role="tablist">
                 <li className="nav-item" role="presentation">
                   <NavLink
-                    className={({ isActive }) => `nav-link ${isActive || isIndex ? "active" : ""}`}
+                    className={({ isActive }) => `nav-link ${isActive || isLogin ? "active" : ""}`}
                     to="login"
                     role="tab"
                   >
@@ -55,7 +55,7 @@ export default function Checkout() {
               </ul>
 
               <div className="tab-content">
-                <Outlet context={{ isIndex }} />
+                <Outlet />
               </div>
             </div>
           )}

@@ -16,7 +16,7 @@ const registerSchema = z
       .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
       .regex(/[0-9]/, "Password must contain at least one number"),
     confirmPassword: z.string(),
-    address: z.string().min(4, "Address must be at least 10 characters long"),
+    address: z.string().min(4, "Address must be at least 4 characters long"),
     city: z.string().min(1, "Please select a city"),
     terms: z.boolean().refine((val) => val === true, {
       message: "You must agree to the terms and conditions",

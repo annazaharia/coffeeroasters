@@ -44,7 +44,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
 
       const user: User = {
-        id: Date.now().toString(),
+        id: Date.now().toString(), 
         email: newUser.email,
         password: newUser.password,
         firstName: newUser.firstName,
